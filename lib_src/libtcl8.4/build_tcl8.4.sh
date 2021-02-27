@@ -61,7 +61,7 @@ CC=$C_COMPILER
 export CC
 chmod +x $SCRIPT_PATH/unix/configure 
 $SCRIPT_PATH/unix/configure --disable-shared --enable-threads --enable-64bit --prefix=$INSTALL_PREFIX
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then
 	echo "Failed to configure tcl8.4"
 	exit 1

@@ -23,7 +23,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]
 then
         OS="Linux"
         shared_ext="so"
-elif [[ "$OSTYPE" == "darwin" ]]
+elif [[ "$OSTYPE" == "darwin20" ]]
 then
         OS="Mac"
         shared_ext="dylib"

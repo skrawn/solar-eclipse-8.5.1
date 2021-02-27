@@ -1195,12 +1195,12 @@ dnl AC_CHECK_TOOL(AR, ar)
 	    LD_SEARCH_FLAGS=""
 	    ;;
 	BSD/OS-4.*)
-	    SHLIB_CFLAGS="-export-dynamic -fPIC"
+	    SHLIB_CFLAGS="-export_dynamic -fPIC"
 	    SHLIB_LD='${CC} -shared'
 	    SHLIB_SUFFIX=".so"
 	    DL_OBJS="tclLoadDl.o"
 	    DL_LIBS="-ldl"
-	    LDFLAGS="$LDFLAGS -export-dynamic"
+	    LDFLAGS="$LDFLAGS -export_dynamic"
 	    CC_SEARCH_FLAGS=""
 	    LD_SEARCH_FLAGS=""
 	    ;;
@@ -1244,7 +1244,7 @@ dnl AC_CHECK_TOOL(AR, ar)
 	    LD_SEARCH_FLAGS=""
 	    ;;
 	Haiku*)
-	    LDFLAGS="$LDFLAGS -Wl,--export-dynamic"
+	    LDFLAGS="$LDFLAGS -Wl,-export_dynamic"
 	    SHLIB_CFLAGS="-fPIC"
 	    SHLIB_SUFFIX=".so"
 	    SHLIB_LD='${CC} -shared ${CFLAGS} ${LDFLAGS}'
@@ -1407,7 +1407,7 @@ dnl AC_CHECK_TOOL(AR, ar)
 		SHLIB_LD='${CC} -shared ${CFLAGS} ${LDFLAGS}'
 		DL_OBJS="tclLoadDl.o"
 		DL_LIBS="-ldl"
-		LDFLAGS="$LDFLAGS -Wl,--export-dynamic"
+		LDFLAGS="$LDFLAGS -Wl,-export_dynamic"
 		if test $doRpath = yes ; then
 		    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
 		fi
@@ -1457,7 +1457,7 @@ dnl AC_CHECK_TOOL(AR, ar)
 	    SHLIB_LD='${CC} -shared'
 	    DL_OBJS="tclLoadDl.o"
 	    DL_LIBS="-mshared -ldl"
-	    LD_FLAGS="-Wl,--export-dynamic"
+	    LD_FLAGS="-Wl,-export_dynamic"
 	    if test $doRpath = yes ; then
 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
@@ -1522,7 +1522,7 @@ dnl AC_CHECK_TOOL(AR, ar)
 #endif
 		    ], tcl_cv_ld_elf=yes, tcl_cv_ld_elf=no)])
 		if test $tcl_cv_ld_elf = yes; then
-		    LDFLAGS=-Wl,-export-dynamic
+		    LDFLAGS=-Wl,-export_dynamic
 		else
 		    LDFLAGS=""
 	        fi
@@ -1540,7 +1540,7 @@ dnl AC_CHECK_TOOL(AR, ar)
 	    SHLIB_SUFFIX=".so"
 	    DL_OBJS="tclLoadDl.o"
 	    DL_LIBS=""
-	    LDFLAGS="$LDFLAGS -export-dynamic"
+	    LDFLAGS="$LDFLAGS -export_dynamic"
 	    if test $doRpath = yes ; then
 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
 	    fi
